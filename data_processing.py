@@ -5,6 +5,22 @@ import open3d as o3d
 import numpy as np
 
 def parse_dataset_scanobjectnn(dataset_folder, num_points=2048):
+
+    # Iterate through the folders and remove unnessary files
+    for folder_name in os.listdir(dataset_folder):
+        folder_path = os.path.join(dataset_folder, folder_name)
+        if os.path.isdir(folder_path):
+            for file_name in os.listdir(folder_path):
+                if file_name.endswith('_indices.bin'):
+                    file_path = os.path.join(folder_path, file_name)
+                    os.remove(file_path)
+                if file_name.endswith('_part.bin'):
+                    file_path = os.path.join(folder_path, file_name)
+                    os.remove(file_path)
+                if file_name.endswith('_part.xml'):
+                    file_path = os.path.join(folder_path, file_name)
+                    os.remove(file_path)
+                    
     all_points = []
     all_labels = []
     class_map = {}
