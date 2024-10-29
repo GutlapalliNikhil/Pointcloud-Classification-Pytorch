@@ -68,6 +68,12 @@ To train the model on the ScanObjectNN dataset, run the following command:
 python3 main.py --dataset_folder <path_to_modelnet_dataset> --dataset scanobjectnn --visualize
 ```
 
+To run the inference on the ModelNet10 dataset:
+
+```console
+python3 trained_model_inference.py
+```
+
 Note: Replace **'<path_to_modelnet_dataset>'** and **'<path_to_scanobjectnn_dataset>'** with the actual paths to the ModelNet10 and ScanObjectNN datasets respectively.
 
 ## Additional Files
